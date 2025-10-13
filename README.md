@@ -8,31 +8,32 @@ Follow these steps to set up the ACME Voting System on your local machine.
 
 ### Prerequisites
 
-- PHP 7.4 or higher
-- MySQL 5.7 or higher
+- XAMPP (includes PHP 7.4 or higher, MySQL 5.7 or higher, and Apache for hosting the application locally)
 
 ### Setup
 
 1. **Clone the repository:**
-   ```bash
+   ```bash:disable-run
    git clone https://github.com/dejesusbg/acme-voting.git
    cd acme-voting
    ```
 
 2. **Set up the database:**
-   - Create a new MySQL database.
+   - Start XAMPP and ensure MySQL is running.
+   - Create a new MySQL database using phpMyAdmin (accessible via XAMPP at `http://localhost/phpmyadmin`).
    - Import the `acme.sql` file from the `sql/` directory to create the necessary tables and populate them with sample data.
 
 3. **Configure the application:**
    - Open `config.json` and update the database connection settings:
      ```json
      {
-         "host": "your_host",
-         "username": "your_username",
-         "password": "your_password",
+         "host": "localhost",
+         "username": "root",
+         "password": "",
          "database": "your_database"
      }
      ```
+   - Note: The default MySQL credentials in XAMPP are `username: root` and `password: ""` (empty), unless changed.
 
 4. **Adjust server settings (if necessary):**
    - If you change the project folder name, update the following files:
@@ -42,7 +43,7 @@ Follow these steps to set up the ACME Voting System on your local machine.
 
 ## Usage
 
-Once the installation is complete, you can access the application by navigating to the project folder in your web browser.
+Once the installation is complete, start XAMPP, ensure Apache and MySQL services are running, and access the application by navigating to the project folder in your web browser (e.g., `http://localhost/acme-voting`).
 
 ### User Roles and Credentials
 
